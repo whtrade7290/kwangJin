@@ -84,7 +84,6 @@ export default {
 .main-container {
   width: 100%;
   height: 50rem;
-  background-color: bisque;
 }
 .main-img-div {
   width: 100%;

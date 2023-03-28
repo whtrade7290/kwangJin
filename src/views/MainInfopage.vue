@@ -72,14 +72,22 @@ export default {
       console.log('testMethod');
       window.scrollTo(100, 200);
     },
-    onScroll() {
-      console.log('실행');
+    handleScroll(e) {
+      this.scrollTop = e.target.scrollTop;
+
+      console.log('this.scrollTop == ', this.scrollTop);
+
+      if (this.scrollTop > 400) {
+        console.log('실행1');
+      } else {
+        console.log('실행2');
+      }
     },
   },
   computed: {},
   mounted() {
-    window.scrollTo(0, 0);
-    document.addEventListener('scroll', this.scrollEvents);
+    this.target = document.querySelector('#app');
+    window.addEventListener('scroll', this.handleScroll);
   },
   unmounted() {
     document.removeEventListener('scroll', this.scrollEvents);
