@@ -1,105 +1,143 @@
 <template>
-  <div>
-    <div class="section-1 mt-16 flex">
-      <div class="info-img-div1 ml-32">
-        <img src="@/assets/info-img1.jpg" />
+  <div id="mainPageDiv">
+    <transition>
+      <div
+        class="info-sections mt-16 flex"
+        v-show="isShow1"
+        :class="{ show: isShow1 }"
+      >
+        <div class="info-img-div1 ml-32">
+          <img src="@/assets/info-img1.jpg" />
+        </div>
+        <div class="info-img-div1 ml-32 info-text-box">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </div>
       </div>
-      <div class="info-img-div1 ml-32 info-text-box">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+    </transition>
+    <transition>
+      <div
+        class="info-sections mt-16 flex"
+        v-show="isShow2"
+        :class="{ show: isShow2 }"
+      >
+        <div class="info-img-div1 ml-32 info-text-box">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions
+          <!-- of Lorem Ipsum. 스크롤 위치: {{ scrollEvents }} -->
+        </div>
+        <div class="info-img-div1 ml-32">
+          <img src="@/assets/info-img1.jpg" />
+        </div>
       </div>
-    </div>
-    <div class="section-1 mt-16 flex">
-      <div class="info-img-div1 ml-32 info-text-box">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        <!-- of Lorem Ipsum. 스크롤 위치: {{ scrollEvents }} -->
+    </transition>
+    <transition>
+      <div
+        class="info-sections mt-16 flex"
+        v-show="isShow3"
+        :class="{ show: isShow3 }"
+      >
+        <div class="info-img-div1 ml-32">
+          <img src="@/assets/info-img1.jpg" />
+        </div>
+        <div class="info-img-div1 ml-32 info-text-box">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </div>
       </div>
-      <div class="info-img-div1 ml-32">
-        <img src="@/assets/info-img1.jpg" />
-      </div>
-    </div>
-    <div class="section-1 mt-16 flex">
-      <div class="info-img-div1 ml-32">
-        <img src="@/assets/info-img1.jpg" />
-      </div>
-      <div class="info-img-div1 ml-32 info-text-box">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </div>
-    </div>
-    <div>
-      <transition>
-        <li v-if="isOK">1</li>
-        <li v-if="isOK">2</li>
-        <li v-if="isOK">3</li>
-      </transition>
-      <button v-on:click="testMethod">버튼</button><br />
-      <!-- 스크롤 위치: {{ scrollEvents }} -->
-    </div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
-      isOK: false,
+      scrollPosition: 0,
+      isShow1: false,
+      isShow2: false,
+      isShow3: false,
     };
   },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   methods: {
-    testMethod() {
-      console.log('testMethod');
-      window.scrollTo(100, 200);
-    },
-    handleScroll(e) {
-      this.scrollTop = e.target.scrollTop;
-
-      console.log('this.scrollTop == ', this.scrollTop);
-
-      if (this.scrollTop > 400) {
-        console.log('실행1');
-      } else {
-        console.log('실행2');
+    handleScroll() {
+      // Retrieve the scroll position
+      this.scrollPosition =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      // Do something with the scroll position
+      // console.log(this.scrollPosition);
+      if (this.scrollPosition > 400) {
+        console.log('this.scrollPosition >= 400', this.scrollPosition);
+        this.isShow1 = true;
+      }
+      if (this.scrollPosition > 800) {
+        console.log('this.scrollPosition >= 800', this.scrollPosition);
+        this.isShow2 = true;
+      }
+      if (this.scrollPosition > 1200) {
+        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        this.isShow3 = true;
+      }
+      if (this.scrollPosition < 600) {
+        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        this.isShow1 = false;
+      }
+      if (this.scrollPosition < 1000) {
+        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        this.isShow2 = false;
+      }
+      if (this.scrollPosition < 1400) {
+        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        this.isShow3 = false;
       }
     },
   },
-  computed: {},
-  mounted() {
-    this.target = document.querySelector('#app');
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  unmounted() {
-    document.removeEventListener('scroll', this.scrollEvents);
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
 
 <style scoped>
-.section-1 {
+#mainPageDiv {
+  height: 100rem;
+}
+.info-sections {
   width: 100%;
   height: 30rem;
+  visibility: hidden;
 }
+.show {
+  visibility: visible;
+}
+
 .info-img-div1 {
   width: 40%;
   height: 100%;
@@ -113,12 +151,13 @@ export default {
   visibility: hidden;
 }
 
-.list-enter-active,
-.list-leave-active {
-  transition: all 3s;
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s;
 }
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+.v-enter,
+.v-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(100px);
 }
 </style>

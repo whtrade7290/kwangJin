@@ -20,4 +20,10 @@ export default new VueRouter({
     { path: '/contectPage', component: ContectPage },
     { path: '/loginPage', component: LoginPage },
   ],
+
+  // scrollBehavior(from, to, savedPosition) {
+  //   console.log('from = ', from);
+  //   console.log('to = ', to);
+  //   console.log('savedPosition = ', savedPosition);
+  // },
 });
