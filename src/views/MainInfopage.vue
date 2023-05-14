@@ -1,11 +1,7 @@
 <template>
   <div id="mainPageDiv">
     <transition>
-      <div
-        class="info-sections mt-16 flex"
-        v-show="isShow1"
-        :class="{ show: isShow1 }"
-      >
+      <div class="info-sections mt-16 flex" v-show="isShow1">
         <div class="info-img-div1 ml-32">
           <img src="@/assets/info-img1.jpg" />
         </div>
@@ -23,11 +19,7 @@
       </div>
     </transition>
     <transition>
-      <div
-        class="info-sections mt-16 flex"
-        v-show="isShow2"
-        :class="{ show: isShow2 }"
-      >
+      <div class="info-sections mt-16 flex" v-show="isShow2">
         <div class="info-img-div1 ml-32 info-text-box">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -38,7 +30,6 @@
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions
-          <!-- of Lorem Ipsum. 스크롤 위치: {{ scrollEvents }} -->
         </div>
         <div class="info-img-div1 ml-32">
           <img src="@/assets/info-img1.jpg" />
@@ -46,11 +37,7 @@
       </div>
     </transition>
     <transition>
-      <div
-        class="info-sections mt-16 flex"
-        v-show="isShow3"
-        :class="{ show: isShow3 }"
-      >
+      <div class="info-sections mt-16 flex" v-show="isShow3">
         <div class="info-img-div1 ml-32">
           <img src="@/assets/info-img1.jpg" />
         </div>
@@ -106,15 +93,15 @@ export default {
         this.isShow3 = true;
       }
       if (this.scrollPosition < 600) {
-        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        console.log('this.scrollPosition < 600', this.scrollPosition);
         this.isShow1 = false;
       }
       if (this.scrollPosition < 1000) {
-        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        console.log('this.scrollPosition < 1000', this.scrollPosition);
         this.isShow2 = false;
       }
       if (this.scrollPosition < 1400) {
-        console.log('this.scrollPosition >= 1200', this.scrollPosition);
+        console.log('this.scrollPosition < 1400', this.scrollPosition);
         this.isShow3 = false;
       }
     },
@@ -132,10 +119,6 @@ export default {
 .info-sections {
   width: 100%;
   height: 30rem;
-  visibility: hidden;
-}
-.show {
-  visibility: visible;
 }
 
 .info-img-div1 {

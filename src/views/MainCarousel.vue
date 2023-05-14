@@ -83,11 +83,11 @@ export default {
 <style scoped>
 .main-container {
   width: 100%;
-  height: 50rem;
+  height: 75vh;
 }
 .main-img-div {
   width: 100%;
-  height: 50rem;
+  height: 70vh;
   object-fit: cover;
 }
 img {

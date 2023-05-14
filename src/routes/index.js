@@ -12,6 +12,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
   routes: [
+    { path: '/', component: MainPage },
     { path: '/mainPage', component: MainPage },
     { path: '/companyIntro', component: CompanyIntro },
     { path: '/haveTechnology', component: HaveTechnology },
