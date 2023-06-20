@@ -1,9 +1,93 @@
 <template>
-  <div>공장소개</div>
+  <div>
+    <div class="head-back-div">
+      <div class="intro-title">공장 소개</div>
+    </div>
+    <div class="main-container">
+      <carousel class="main-carousel" :nav="false" :autoplay="false" :items="1">
+        <div class="main-img-div">
+          <img class="main-img" src="@/assets/4.jpg" />
+        </div>
+
+        <div class="main-img-div">
+          <img class="main-img object-cover h-300" src="@/assets/5.jpg" />
+        </div>
+
+        <div class="main-img-div">
+          <img class="main-img" src="@/assets/6.jpg" />
+        </div>
+        <div class="main-img-div">
+          <img class="main-img" src="@/assets/7.jpg" />
+        </div>
+      </carousel>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import carousel from 'vue-owl-carousel';
+export default {
+  components: { carousel },
+  data: function () {
+    return {
+      options: {
+        type: 1,
+      },
+    };
+  },
+};
 </script>
 
-<style></style>
+<style scope>
+.head-back-div {
+  width: 100%;
+  height: 25vh;
+  background-image: url('@/assets/3.jpg');
+  /* background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.main-container {
+  width: 100%;
+  height: 75vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+}
+.main-img-div {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+img {
+  object-fit: cover;
+}
+.txt-box {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  font-size: 50px;
+}
+button {
+  color: #006838;
+  font-size: 2rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
+  padding: 0.5rem 5rem 0.5rem 5rem;
+  border-radius: 5px;
+}
+p {
+  color: #2c3333;
+}
+</style>
