@@ -1,10 +1,6 @@
 <template>
   <div>
-    <section>
-      <div class="head-back-div">
-        <div class="intro-title">회사 소개</div>
-      </div>
-    </section>
+    <sub-menu :title="submenuTitle"></sub-menu>
     <section class="greeting-section">
       <div class="greeting-div ml-20 mt-10">
         <h1>인사말1</h1>
@@ -16,9 +12,18 @@
     <section class="history-section flex mt-20">history</section>
   </div>
 </template>
-
 <script>
-export default {};
+import SubMenu from '@/components/common/SubMenu.vue';
+export default {
+  components: {
+    SubMenu,
+  },
+  data() {
+    return {
+      submenuTitle: '회사소개',
+    };
+  },
+};
 </script>
 
 <style scope>

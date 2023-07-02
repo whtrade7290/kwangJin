@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="head-back-div">
-      <div class="intro-title">공장 소개</div>
-    </div>
+    <sub-menu :title="submenuTitle"></sub-menu>
     <div class="main-container">
       <carousel class="main-carousel" :nav="false" :autoplay="false" :items="1">
         <div class="main-img-div">
@@ -19,6 +17,9 @@
         <div class="main-img-div">
           <img class="main-img" src="@/assets/7.jpg" />
         </div>
+        <div class="main-img-div">
+          <img class="main-img" src="@/assets/8.jpg" />
+        </div>
       </carousel>
     </div>
   </div>
@@ -26,13 +27,15 @@
 
 <script>
 import carousel from 'vue-owl-carousel';
+import SubMenu from '@/components/common/SubMenu.vue';
 export default {
-  components: { carousel },
+  components: { carousel, SubMenu },
   data: function () {
     return {
       options: {
         type: 1,
       },
+      submenuTitle: '공장소개',
     };
   },
 };

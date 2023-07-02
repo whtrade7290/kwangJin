@@ -1,9 +1,19 @@
 <template>
-  <div>Contect</div>
+  <sub-menu :title="submenuTitle"></sub-menu>
 </template>
 
 <script>
-export default {};
+import SubMenu from '@/components/common/SubMenu.vue';
+export default {
+  components: {
+    SubMenu,
+  },
+  data() {
+    return {
+      submenuTitle: 'Contect',
+    };
+  },
+};
 </script>
 
 <style></style>
