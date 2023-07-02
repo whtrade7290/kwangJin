@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     handleScroll() {
-      // Retrieve the scroll position
       this.scrollPosition =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
