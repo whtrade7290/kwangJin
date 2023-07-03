@@ -1,6 +1,7 @@
 <template>
   <nav
     class="flex justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 relative"
+    id="header"
   >
     <!-- Logo Container -->
     <div class="flex items-center">
@@ -114,4 +115,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#header {
+  position: fixed;
+  background-color: white;
+}
+</style>

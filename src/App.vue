@@ -4,7 +4,9 @@
     <div class="app-contents">
       <router-view></router-view>
     </div>
-    <AppFooter></AppFooter>
+    <div class="relative">
+      <AppFooter class="app-footer"></AppFooter>
+    </div>
   </div>
 </template>
 

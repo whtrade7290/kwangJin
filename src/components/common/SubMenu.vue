@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mt-28">
     <div class="head-back-div">
       <div class="intro-title">{{ title }}</div>
     </div>
@@ -19,3 +19,7 @@ export default {
   },
 };
 </script>
+<style scoped>
+.subMenu {
+}
+</style>

@@ -1,17 +1,16 @@
 <template>
-  <div>
+  <section>
     <sub-menu :title="submenuTitle"></sub-menu>
     <div>
       <MainInfopage
-        :content1="content1"
-        :content2="content2"
-        :content3="content3"
-        :imgPath1="imgPath1"
-        :imgPath2="imgPath2"
-        :imgPath3="imgPath3"
+        :contents="contents"
+        :imgPaths="imgPaths"
+        :startShowImg="startShowImg"
+        :endShowImg="endShowImg"
+        :calledMainPage="false"
       ></MainInfopage>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -25,9 +24,10 @@ export default {
   data() {
     return {
       submenuTitle: '보유기술',
-      content1: '내용1',
-      content2: '내용2',
-      content3: '내용3',
+      contents: ['특허1', '특허2', '특허3', '특허4', '특허5', '특허6'],
+      imgPaths: ['9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg'],
+      startShowImg: 100,
+      endShowImg: 100,
     };
   },
 };

@@ -1,77 +1,61 @@
 <template>
-  <div id="mainPageDiv">
-    <transition>
-      <div class="info-sections mt-16 flex" v-show="isShow1">
-        <div class="info-img-div1 ml-32">
-          <img src="@/assets/info-img1.jpg" />
+  <div :class="[calledMainPage ? 'height100rem' : 'height220rem']">
+    <transition-group name="info-sections" tag="div">
+      <div
+        v-for="(content, index) in contents"
+        :key="index"
+        class="info-sections mt-16 flex"
+        :class="[calledMainPage ? '' : 'addMargin7']"
+        v-show="isShow[index]"
+      >
+        <div class="info-img-div1 ml-32" v-if="index % 2 === 0">
+          <img :src="require(`@/assets/${imgPaths[index]}`)" />
         </div>
         <div class="info-img-div1 ml-32 info-text-box">
-          {{ content1 }}
+          {{ content }}
+        </div>
+        <div class="info-img-div1 ml-32" v-if="index % 2 === 1">
+          <img :src="require(`@/assets/${imgPaths[index]}`)" />
         </div>
       </div>
-    </transition>
-    <transition>
-      <div class="info-sections mt-16 flex" v-show="isShow2">
-        <div class="info-img-div1 ml-32 info-text-box">
-          {{ content2 }}
-        </div>
-        <div class="info-img-div1 ml-32">
-          <img src="@/assets/info-img1.jpg" />
-        </div>
-      </div>
-    </transition>
-    <transition>
-      <div class="info-sections mt-16 flex" v-show="isShow3">
-        <div class="info-img-div1 ml-32">
-          <img src="@/assets/info-img1.jpg" />
-        </div>
-        <div class="info-img-div1 ml-32 info-text-box">
-          {{ content3 }}
-        </div>
-      </div>
-    </transition>
+    </transition-group>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    content1: {
-      type: String,
+    contents: {
+      type: Array,
       required: true,
     },
-    content2: {
-      type: String,
+    imgPaths: {
+      type: Array,
       required: true,
     },
-    content3: {
-      type: String,
+    startShowImg: {
+      type: Number,
       required: true,
     },
-    imgPath1: {
-      type: String,
+    endShowImg: {
+      type: Number,
       required: true,
     },
-    imgPath2: {
-      type: String,
-      required: true,
-    },
-    imgPath3: {
-      type: String,
+    calledMainPage: {
+      type: Boolean,
       required: true,
     },
   },
   data() {
     return {
       scrollPosition: 0,
-      isShow1: false,
-      isShow2: false,
-      isShow3: false,
-      testImgPath1: '',
+      isShow: [],
+      // scrollLevel: props.scrollLevel,
     };
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); // 초기 스크롤 위치에서 요소 표시 여부 업데이트
   },
   methods: {
     handleScroll() {
@@ -80,32 +64,24 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop ||
         0;
-      // Do something with the scroll position
-      // console.log(this.scrollPosition);
-      if (this.scrollPosition > 400) {
-        console.log('this.scrollPosition >= 400', this.scrollPosition);
-        this.isShow1 = true;
-      }
-      if (this.scrollPosition > 800) {
-        console.log('this.scrollPosition >= 800', this.scrollPosition);
-        this.isShow2 = true;
-      }
-      if (this.scrollPosition > 1200) {
-        console.log('this.scrollPosition >= 1200', this.scrollPosition);
-        this.isShow3 = true;
-      }
-      if (this.scrollPosition < 600) {
-        console.log('this.scrollPosition < 600', this.scrollPosition);
-        this.isShow1 = false;
-      }
-      if (this.scrollPosition < 1000) {
-        console.log('this.scrollPosition < 1000', this.scrollPosition);
-        this.isShow2 = false;
-      }
-      if (this.scrollPosition < 1400) {
-        console.log('this.scrollPosition < 1400', this.scrollPosition);
-        this.isShow3 = false;
-      }
+
+      // open
+      this.isShow = this.contents.map((_, index) => {
+        console.log('this.scrollPosition : ', this.scrollPosition);
+        console.log('index : ', index);
+        const start = (index + 1) * this.startShowImg;
+
+        return this.scrollPosition >= start;
+      });
+
+      // close
+      this.isShow = this.contents.map((_, index) => {
+        console.log('this.scrollPosition : ', this.scrollPosition);
+        console.log('index : ', index);
+        const end = (index + 2) * this.endShowImg;
+
+        return this.scrollPosition >= end;
+      });
     },
   },
   beforeDestroy() {
@@ -115,8 +91,14 @@ export default {
 </script>
 
 <style scoped>
-#mainPageDiv {
+.height100rem {
   height: 100rem;
+}
+.height220rem {
+  height: 220rem;
+}
+.addMargin7 {
+  margin-bottom: 7rem;
 }
 .info-sections {
   width: 100%;
@@ -136,12 +118,12 @@ export default {
   visibility: hidden;
 }
 
-.v-enter-active,
-.v-leave-active {
+.info-sections-enter-active,
+.info-sections-leave-active {
   transition: all 0.5s;
 }
-.v-enter,
-.v-leave-to {
+.info-sections-enter,
+.info-sections-leave-to {
   opacity: 0;
   transform: translateX(100px);
 }

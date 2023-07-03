@@ -2,12 +2,11 @@
   <div>
     <MainCarousel></MainCarousel>
     <MainInfopage
-      :content1="content1"
-      :content2="content2"
-      :content3="content3"
-      :imgPath1="imgPath1"
-      :imgPath2="imgPath2"
-      :imgPath3="imgPath3"
+      :contents="contents"
+      :imgPaths="imgPaths"
+      :startShowImg="startShowImg"
+      :endShowImg="endShowImg"
+      :calledMainPage="true"
     ></MainInfopage>
   </div>
 </template>
@@ -23,9 +22,11 @@ export default {
   },
   data: function () {
     return {
-      content1: '내용1',
-      content2: '내용2',
-      content3: '내용3',
+      contents: ['내용1', '내용2', '내용3'],
+      imgPaths: ['info-img1.jpg', 'info-img1.jpg', 'info-img1.jpg'],
+      startShowImg: 100,
+      endShowImg: 400,
+      decideToheight: 'calledMainPage',
     };
   },
 };

@@ -1,6 +1,11 @@
 <template>
   <div class="main-container">
-    <carousel class="main-carousel" :nav="false" :autoplay="true" :items="1">
+    <carousel
+      class="main-carousel mt-40"
+      :nav="false"
+      :autoplay="true"
+      :items="1"
+    >
       <div class="main-img-div">
         <img class="main-img" src="@/assets/1.jpg" />
         <div class="txt-box">
