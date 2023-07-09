@@ -5,20 +5,63 @@
       <carousel class="main-carousel" :nav="false" :autoplay="false" :items="1">
         <div class="main-img-div">
           <img class="main-img" src="@/assets/4.jpg" />
+          <div class="explain-box">
+            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
+            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
+            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
+            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
+            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
+            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
+            velit iracundia consequuntur sea et.
+          </div>
         </div>
-
         <div class="main-img-div">
-          <img class="main-img object-cover h-300" src="@/assets/5.jpg" />
+          <img class="main-img" src="@/assets/5.jpg" />
+          <div class="explain-box">
+            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
+            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
+            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
+            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
+            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
+            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
+            velit iracundia consequuntur sea et.
+          </div>
         </div>
-
         <div class="main-img-div">
           <img class="main-img" src="@/assets/6.jpg" />
+          <div class="explain-box">
+            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
+            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
+            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
+            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
+            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
+            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
+            velit iracundia consequuntur sea et.
+          </div>
         </div>
         <div class="main-img-div">
           <img class="main-img" src="@/assets/7.jpg" />
+          <div class="explain-box">
+            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
+            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
+            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
+            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
+            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
+            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
+            velit iracundia consequuntur sea et.
+          </div>
         </div>
         <div class="main-img-div">
           <img class="main-img" src="@/assets/8.jpg" />
+          <div class="explain-box">
+            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
+            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
+            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
+            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
+            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
+            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
+            velit iracundia consequuntur sea et.
+          </div>
         </div>
       </carousel>
     </div>
@@ -72,6 +115,8 @@ export default {
   width: 100%;
   height: 70vh;
   object-fit: cover;
+  display: flex;
+  justify-content: center;
 }
 img {
   object-fit: cover;
@@ -92,5 +137,11 @@ button {
 }
 p {
   color: #2c3333;
+}
+.explain-box {
+  align-items: center;
+  width: 50vw;
+  /* text-shadow: 1px 1px 1px #888888; */
+  text-shadow: -2px -2px 4px #cccccc;
 }
 </style>
