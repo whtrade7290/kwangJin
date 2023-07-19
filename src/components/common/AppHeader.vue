@@ -27,35 +27,35 @@
     <div class="items-center hidden space-x-8 lg:flex">
       <router-link
         to="/companyIntro"
-        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300"
+        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300 font-bold"
       >
         회사소개
       </router-link>
 
       <router-link
         to="/haveTechnology"
-        class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold"
+        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300 font-bold"
       >
         보유기술
       </router-link>
 
       <router-link
         to="/factoryIntro"
-        class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold"
+        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300 font-bold"
       >
         공장소개
       </router-link>
 
       <router-link
         to="/productHistory"
-        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300"
+        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300 font-bold"
       >
         작업 History
       </router-link>
 
       <router-link
         to="/contectPage"
-        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300"
+        class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300 font-bold"
       >
         Contact
       </router-link>
@@ -64,7 +64,7 @@
     <!-- Icon Menu Section -->
     <div class="flex items-center space-x-5">
       <!-- Register -->
-      <a
+      <!-- <a
         class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300"
       >
         <svg
@@ -82,10 +82,10 @@
         </svg>
 
         Staff
-      </a>
+      </a> -->
 
       <!-- Login -->
-      <router-link
+      <!-- <router-link
         to="/loginPage"
         class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600"
       >
@@ -104,7 +104,7 @@
         </svg>
 
         Login
-      </router-link>
+      </router-link> -->
     </div>
   </nav>
 </template>

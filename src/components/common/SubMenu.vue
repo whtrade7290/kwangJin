@@ -20,6 +20,13 @@ export default {
 };
 </script>
 <style scoped>
-.subMenu {
+.head-back-div {
+  width: 100%;
+  height: 25vh;
+  background-image: url('@/assets/3.jpg');
+  /* background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -66,13 +66,13 @@ export default {
           performents: ['(주)광진기업 공장증축'],
         },
       ],
-      images: ['1.jpg', '2.jpg', '3.jpg'],
+      images: ['1.jpg', '2.jpg', '3.jpg', '1.jpg'],
     };
   },
 };
 </script>
 
-<style scope>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 .head-back-div {
