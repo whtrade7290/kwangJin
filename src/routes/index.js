@@ -6,7 +6,6 @@ import FactoryIntro from '@/views/FactoryIntro.vue';
 import ProductHistory from '@/views/ProductHistory.vue';
 import ContectPage from '@/views/ContectPage.vue';
 import MainPage from '@/views/MainPage.vue';
-import LoginPage from '@/views/LoginPage.vue';
 
 Vue.use(VueRouter);
 
@@ -19,7 +18,6 @@ export default new VueRouter({
     { path: '/factoryIntro', component: FactoryIntro },
     { path: '/productHistory', component: ProductHistory },
     { path: '/contectPage', component: ContectPage },
-    { path: '/loginPage', component: LoginPage },
   ],
 
   // scrollBehavior(from, to, savedPosition) {

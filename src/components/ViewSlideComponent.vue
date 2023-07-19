@@ -67,19 +67,15 @@ export default {
 
       // open
       this.isShow = this.contents.map((_, index) => {
-        console.log('this.scrollPosition : ', this.scrollPosition);
-        console.log('index : ', index);
         const start = (index + 1) * this.startShowImg;
-
+        console.log('start', start);
+        console.log('scrollPosition', this.scrollPosition);
         return this.scrollPosition >= start;
       });
 
       // close
       this.isShow = this.contents.map((_, index) => {
-        console.log('this.scrollPosition : ', this.scrollPosition);
-        console.log('index : ', index);
         const end = (index + 2) * this.endShowImg;
-
         return this.scrollPosition >= end;
       });
     },

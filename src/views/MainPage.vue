@@ -1,24 +1,27 @@
 <template>
   <div>
-    <MainCarousel></MainCarousel>
-    <MainInfopage
+    <carousel-component
+      :ImgPaths="carouselImgs"
+      :calledMainPage="calledMainPage"
+    ></carousel-component>
+    <view-slide
       :contents="contents"
       :imgPaths="imgPaths"
       :startShowImg="startShowImg"
       :endShowImg="endShowImg"
       :calledMainPage="true"
-    ></MainInfopage>
+    ></view-slide>
   </div>
 </template>
 
 <script>
-import MainCarousel from '@/views/MainCarousel.vue';
-import MainInfopage from '@/views/MainInfopage.vue';
+import CarouselComponent from '@/components/CarouselComponent.vue';
+import ViewSlide from '@/components/ViewSlideComponent.vue';
 
 export default {
   components: {
-    MainCarousel,
-    MainInfopage,
+    CarouselComponent,
+    ViewSlide,
   },
   data: function () {
     return {
@@ -27,6 +30,8 @@ export default {
       startShowImg: 100,
       endShowImg: 400,
       decideToheight: 'calledMainPage',
+      carouselImgs: ['1.jpg', '2.jpg', '3.png'],
+      calledMainPage: true,
     };
   },
 };

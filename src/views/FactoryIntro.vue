@@ -1,84 +1,33 @@
 <template>
   <div>
     <sub-menu :title="submenuTitle"></sub-menu>
-    <div class="main-container">
-      <carousel class="main-carousel" :nav="false" :autoplay="false" :items="1">
-        <div class="main-img-div">
-          <img class="main-img" src="@/assets/4.jpg" />
-          <div class="explain-box">
-            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
-            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
-            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
-            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
-            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
-            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
-            velit iracundia consequuntur sea et.
-          </div>
-        </div>
-        <div class="main-img-div">
-          <img class="main-img" src="@/assets/5.jpg" />
-          <div class="explain-box">
-            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
-            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
-            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
-            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
-            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
-            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
-            velit iracundia consequuntur sea et.
-          </div>
-        </div>
-        <div class="main-img-div">
-          <img class="main-img" src="@/assets/6.jpg" />
-          <div class="explain-box">
-            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
-            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
-            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
-            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
-            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
-            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
-            velit iracundia consequuntur sea et.
-          </div>
-        </div>
-        <div class="main-img-div">
-          <img class="main-img" src="@/assets/7.jpg" />
-          <div class="explain-box">
-            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
-            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
-            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
-            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
-            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
-            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
-            velit iracundia consequuntur sea et.
-          </div>
-        </div>
-        <div class="main-img-div">
-          <img class="main-img" src="@/assets/8.jpg" />
-          <div class="explain-box">
-            Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec
-            ubique primis ex. Mea libris invenire sensibus at. Has ea modus
-            admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore
-            detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros
-            per. At nibh interesset definitiones duo. Vel ex mundi noluisse
-            sententiae, ignota aliquip pri eu. Accumsan appellantur per in,
-            velit iracundia consequuntur sea et.
-          </div>
-        </div>
-      </carousel>
-    </div>
+    <carousel-component
+      :ImgPaths="carouselImgs"
+      :calledMainPage="calledMainPage"
+      :Explanations="Explanations"
+    ></carousel-component>
   </div>
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel';
+// import carousel from 'vue-owl-carousel';
+import CarouselComponent from '@/components/CarouselComponent.vue';
 import SubMenu from '@/components/common/SubMenu.vue';
 export default {
-  components: { carousel, SubMenu },
+  components: { SubMenu, CarouselComponent },
   data: function () {
     return {
       options: {
         type: 1,
       },
       submenuTitle: '공장소개',
+      carouselImgs: ['4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'],
+      Explanations: [
+        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
+        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
+        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
+      ],
+      calledMainPage: false,
     };
   },
 };
