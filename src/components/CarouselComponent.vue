@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <carousel
-      class="main-carousel mt-40"
+      class="main-carousel mt-40 ml-24"
       :nav="false"
       :autoplay="true"
       :items="1"
@@ -87,7 +87,7 @@ export default {
   width: 100%;
   height: 75vh;
 }
-.main-img-div {
+.main-img {
   object-fit: cover;
 }
 img {
