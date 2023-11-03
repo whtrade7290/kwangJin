@@ -4,7 +4,6 @@
     <carousel-component
       :ImgPaths="carouselImgs"
       :calledMainPage="calledMainPage"
-      :Explanations="Explanations"
     ></carousel-component>
   </div>
 </template>
@@ -22,11 +21,7 @@ export default {
       },
       submenuTitle: '공장소개',
       carouselImgs: ['4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'],
-      Explanations: [
-        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
-        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
-        'Lorem ipsum dolor sit amet, ad movet dolore instructior qui, nec ubique primis ex. Mea libris invenire sensibus at. Has ea modus admodum voluptatum, modo percipit voluptatibus id eos. Eu eam dolore detraxit efficiendi, nibh vide gloriatur ex vix, id utinam ceteros per. At nibh interesset definitiones duo. Vel ex mundi noluisse sententiae, ignota aliquip pri eu. Accumsan appellantur per in, velit iracundia consequuntur sea et.',
-      ],
+
       calledMainPage: false,
     };
   },
@@ -34,6 +29,10 @@ export default {
 </script>
 
 <style scope>
+body {
+  font-family: 'Jua', sans-serif;
+  font-family: 'Orbit', sans-serif;
+}
 .head-back-div {
   width: 100%;
   height: 25vh;
@@ -61,7 +60,7 @@ export default {
   margin-bottom: 20vh;
 }
 .main-img-div {
-  width: 100%;
+  width: 70vw;
   height: 70vh;
   object-fit: cover;
   display: flex;
@@ -86,11 +85,5 @@ button {
 }
 p {
   color: #2c3333;
-}
-.explain-box {
-  align-items: center;
-  width: 50vw;
-  /* text-shadow: 1px 1px 1px #888888; */
-  text-shadow: -2px -2px 4px #cccccc;
 }
 </style>

@@ -8,72 +8,45 @@
     >
       <div
         class="main-img-div"
-        v-for="(imgPath, index) in ImgPaths"
-        :key="index"
+        v-for="(imgPath, index1) in ImgPaths"
+        :key="index1"
       >
         <img class="main-img" :src="require(`@/assets/${imgPath}`)" />
         <div class="txt-box" v-if="calledMainPage">
-          <div class="flex w-40">
-            <img
-              class="h-20 w-20 object-cover"
-              src="@/assets/logo-kwangJIn.png"
-              alt=""
-            />
-            <span class="font-semibold">광</span>
-            <span class="font-semibold" style="color: #006838">진</span>
-            <span class="font-semibold">기</span>
-            <span class="font-semibold" style="color: #006838">업</span>
+          <div class="flex w-96">
+            <div class="w-2/4 h-21">
+              <img
+                class="object-cover"
+                src="@/assets/logo-kwangJIn.png"
+                alt=""
+              />
+            </div>
+
+            <div class="flex mt-8">
+              <span class="font-semibold text-6xl">광</span>
+              <span class="font-semibold text-6xl" style="color: #006838"
+                >진</span
+              >
+              <span class="font-semibold text-6xl">기</span>
+              <span class="font-semibold text-6xl" style="color: #006838"
+                >업</span
+              >
+            </div>
           </div>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          <p>bbbbbbbbbbbbbbbbbbbbbbbbb</p>
-          <p>cccccccccccccccccccccccc</p>
-          <button>공장 시설 체험</button>
+          <button
+            class="hover:bg-green-900 text-white font-medium py-2 px-4 rounded"
+          >
+            시설체험
+          </button>
         </div>
         <div v-else>
-          {{ Explanations }}
+          <div v-for="(Explanation, index2) in Explanations" :key="index2">
+            <div v-if="index2 == index1" class="w-36 font-bold">
+              <h1>{{ Explanation }}</h1>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- <div class="main-img-div">
-        <img class="main-img object-cover h-300" src="@/assets/2.jpg" />
-        <div class="txt-box">
-          <div class="flex w-40">
-            <img
-              class="h-20 w-20 object-cover"
-              src="@/assets/logo-kwangJIn.png"
-              alt=""
-            />
-            <span class="font-semibold">광</span>
-            <span class="font-semibold" style="color: #006838">진</span>
-            <span class="font-semibold">기</span>
-            <span class="font-semibold" style="color: #006838">업</span>
-          </div>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          <p>bbbbbbbbbbbbbbbbbbbbbbbbb</p>
-          <p>cccccccccccccccccccccccc</p>
-        </div>
-      </div>
-
-      <div class="main-img-div">
-        <img class="main-img" src="@/assets/3.png" />
-        <div class="txt-box" v-if="calledMain">
-          <div class="flex w-40">
-            <img
-              class="h-20 w-20 object-cover"
-              src="@/assets/logo-kwangJIn.png"
-              alt=""
-            />
-            <span class="font-semibold" style="color: #58595b">광</span>
-            <span class="font-semibold" style="color: #006838">진</span>
-            <span class="font-semibold" style="color: #58595b">기</span>
-            <span class="font-semibold" style="color: #006838">업</span>
-          </div>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          <p>bbbbbbbbbbbbbbbbbbbbbbbbb</p>
-          <p>cccccccccccccccccccccccc</p>
-          <button>공장 시설 체험</button>
-        </div>
-      </div> -->
     </carousel>
   </div>
 </template>
@@ -87,6 +60,13 @@ export default {
       options: {
         type: 1,
       },
+      Explanations: [
+        '멀티빔 홀가공 절단 복합기(NEWRUN5)',
+        '알루미늄 - 다축가공기(gutter) 2대',
+        '절단기 – 10M 1대, 5M 1대',
+        '루프바 가공기',
+        '철골 - 파이프 파이버 레이저',
+      ],
     };
   },
   props: {
@@ -98,10 +78,6 @@ export default {
       type: Boolean,
       required: true,
     },
-    Explanations: {
-      type: Array,
-      required: false,
-    },
   },
 };
 </script>
@@ -112,8 +88,6 @@ export default {
   height: 75vh;
 }
 .main-img-div {
-  width: 100%;
-  height: 70vh;
   object-fit: cover;
 }
 img {
@@ -126,8 +100,10 @@ img {
   font-size: 50px;
 }
 button {
-  color: #006838;
-  outline: 3px solid #006838;
+  font-family: 'Jua', sans-serif;
+  font-family: 'Orbit', sans-serif;
+  color: #eeeeee;
+  background-color: #006838;
   font-size: 2rem;
   margin-left: 4rem;
   margin-top: 2rem;
@@ -136,11 +112,5 @@ button {
 }
 p {
   color: #2c3333;
-}
-.explain-box {
-  align-items: center;
-  width: 50vw;
-  /* text-shadow: 1px 1px 1px #888888; */
-  text-shadow: -2px -2px 4px #cccccc;
 }
 </style>

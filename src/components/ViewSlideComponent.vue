@@ -107,8 +107,9 @@ export default {
   object-fit: cover;
 }
 .info-text-box {
-  outline: black solid 1px;
   font-size: 1.5rem;
+  font-family: 'Jua', sans-serif;
+  font-family: 'Orbit', sans-serif;
 }
 .active {
   visibility: hidden;

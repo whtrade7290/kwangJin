@@ -1,7 +1,7 @@
 <template>
   <div>
     <sub-menu :title="submenuTitle"></sub-menu>
-    <div class="flex">
+    <div class="flex text-center ml-60">
       <history-list :historyContents="historyContents"></history-list>
       <history-photo :images="images"></history-photo>
     </div>
@@ -48,7 +48,7 @@ export default {
           ],
         },
       ],
-      images: ['1.jpg', '2.jpg', '3.jpg'],
+      images: ['5.png', '6.png', '7.png'],
     };
   },
 };

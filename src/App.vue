@@ -22,4 +22,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Orbit&display=swap');
+body {
+  font-family: 'Jua', sans-serif;
+  font-family: 'Orbit', sans-serif;
+}
+</style>
